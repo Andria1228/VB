@@ -1,0 +1,196 @@
+Public Class Menu
+    Dim n As Integer
+    Dim i As Integer = 1
+    Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pcbMarca.BackColor = Color.MediumTurquoise
+        PnlMarcas.Visible = True
+        pnlModelN.Visible = False
+        pnlAltima.Visible = False
+        pnl4cil.Visible = False
+        pnl4cil2.Visible = False
+        pnlFiltros.Visible = False
+        pnl6cil.Visible = False
+        pnl6cil2.Visible = False
+        pnlfiltro.Visible = False
+        pnlBujia.Visible = False
+    End Sub
+    Private Sub pcbMarca_Click(sender As Object, e As EventArgs) Handles pcbMarca.Click
+        pcbMarca.BackColor = Color.MediumTurquoise
+        pcbModel.BackColor = Color.LightSeaGreen
+        pcbMotor.BackColor = Color.LightSeaGreen
+        pcbServ.BackColor = Color.LightSeaGreen
+        PnlMarcas.Visible = True
+        pnlModelN.Visible = False
+        pnlAltima.Visible = False
+        pnl4cil.Visible = False
+        pnl4cil2.Visible = False
+        pnlFiltros.Visible = False
+        pnl6cil.Visible = False
+        pnl6cil2.Visible = False
+        pnlfiltro.Visible = False
+        pnlBujia.Visible = False
+        lstRegistro.Items.Clear()
+    End Sub
+    Private Sub pcbModel_Click(sender As Object, e As EventArgs) Handles pcbModel.Click
+        pcbMarca.BackColor = Color.LightSeaGreen
+        pcbModel.BackColor = Color.MediumTurquoise
+        pcbMotor.BackColor = Color.LightSeaGreen
+        pcbServ.BackColor = Color.LightSeaGreen
+        pnlModelN.Visible = True
+        btnFiltr.Enabled = True
+        btnAfin.Enabled = True
+        lstRegistro.Items.RemoveAt(1)
+
+    End Sub
+    Private Sub pcbNissa_Click(sender As Object, e As EventArgs) Handles pcbNissa.Click
+
+        pcbMarca.BackgroundImage = My.Resources.NISSA1
+        pcbMarca.BackColor = Color.LightSeaGreen
+        pcbModel.BackColor = Color.MediumTurquoise
+        PnlMarcas.Visible = False
+        pnlModelN.Visible = True
+
+        btnFiltr.Enabled = True
+        lstRegistro.Items.Add("Marca: Nissan")
+    End Sub
+
+
+
+    Private Sub pcbAltima_Click(sender As Object, e As EventArgs) Handles pcbAltima.Click
+        n = n + 1
+        pcbModel.BackgroundImage = My.Resources.altima
+        pcbModel.BackColor = Color.LightSeaGreen
+        pcbMotor.BackColor = Color.MediumTurquoise
+
+        pnlModelN.Visible = False
+        pnlAltima.Visible = True
+        btnFiltr.Enabled = True
+        lstRegistro.Items.Add("Modelo: Altima")
+    End Sub
+
+    Private Sub btn4cil24_Click(sender As Object, e As EventArgs) Handles btn4cil24.Click
+        n = n + 1
+        pcbMotor.BackColor = Color.LightSeaGreen
+        pcbServ.BackColor = Color.MediumTurquoise
+
+        pnlAltima.Visible = False
+        pnl4cil.Visible = True
+
+        btnFiltr.Enabled = True
+        lstRegistro.Items.Add("Motor: 4 cil 2.4 L")
+    End Sub
+
+    Private Sub btn4cil25_Click(sender As Object, e As EventArgs) Handles btn4cil25.Click
+        n = n + 1
+        pcbMotor.BackColor = Color.LightSeaGreen
+        pcbServ.BackColor = Color.MediumTurquoise
+        pnlAltima.Visible = False
+        pnl4cil.Visible = True
+
+        btnFiltr.Enabled = True
+        lstRegistro.Items.Add("Motor: 4 cil 2.5 L")
+    End Sub
+
+    Private Sub btn4cil20_Click(sender As Object, e As EventArgs) Handles btn4cil20.Click
+        n = n + 1
+        pcbMotor.BackColor = Color.LightSeaGreen
+        pcbServ.BackColor = Color.MediumTurquoise
+        pnlAltima.Visible = False
+        pnl4cil.Visible = True
+
+        btnFiltr.Enabled = True
+        lstRegistro.Items.Add("Motor: 4 cil 2.0 L")
+    End Sub
+
+    Private Sub pcbSig_Click(sender As Object, e As EventArgs) Handles pcbSig.Click
+
+
+        pnl4cil.Visible = False
+        pnl4cil2.Visible = True
+
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+        pnl4cil.Visible = True
+        pnl4cil2.Visible = False
+
+
+    End Sub
+
+    Private Sub btn6cil36_Click(sender As Object, e As EventArgs) Handles btn6cil36.Click
+        pcbMotor.BackColor = Color.LightSeaGreen
+        pcbServ.BackColor = Color.MediumTurquoise
+
+        pnlAltima.Visible = False
+
+
+        pnl6cil.Visible = True
+
+        btnFiltr.Enabled = True
+        lstRegistro.Items.Add("Motor: 6 cil 3.6 L")
+    End Sub
+    Private Sub btnFiltr_Click(sender As Object, e As EventArgs) Handles btnFiltr.Click
+
+        pnl4cil.Visible = False
+
+        pnlFiltros.Visible = False
+
+        pnlfiltro.Visible = True
+
+        btnFiltr.Enabled = True
+    End Sub
+
+    Private Sub pcbFlitroFRAM_Click(sender As Object, e As EventArgs) Handles pcbFlitroFRAM.Click
+
+        pnl4cil.Visible = True
+
+        pnlFiltros.Visible = False
+
+        pnlfiltro.Visible = False
+
+        btnFiltr.Enabled = False
+    End Sub
+
+    Private Sub pcbFiltroBOSCH_Click(sender As Object, e As EventArgs) Handles pcbFiltroBOSCH.Click
+        pnl4cil.Visible = True
+
+        pnlFiltros.Visible = False
+
+        pnlfiltro.Visible = False
+
+        btnFiltr.Enabled = False
+
+    End Sub
+
+    Private Sub pcbBack_Click(sender As Object, e As EventArgs) Handles pcbBack.Click
+        btnFiltr.Enabled = True
+        btnAfin.Enabled = True
+    End Sub
+
+    Private Sub btnAfin_Click(sender As Object, e As EventArgs) Handles btnAfin.Click
+
+        pnl4cil.Visible = False
+
+
+
+        pnlBujia.Visible = True
+
+    End Sub
+
+    Private Sub pcbIridioBuj_Click(sender As Object, e As EventArgs) Handles pcbIridioBuj.Click
+
+        pnl4cil.Visible = True
+
+        pnlBujia.Visible = False
+        btnAfin.Enabled = False
+    End Sub
+
+    Private Sub pcbPlatBuj_Click(sender As Object, e As EventArgs) Handles pcbPlatBuj.Click
+        pnl4cil.Visible = True
+
+        pnlBujia.Visible = False
+        btnAfin.Enabled = False
+    End Sub
+End Class
